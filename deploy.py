@@ -1,6 +1,6 @@
 import modal
 
-APP_NAME = "jide-xiugai" #沙盒名字，随意修改
+APP_NAME = "mode1" #沙盒名字，随意修改
 WORKSPACE_DIR = "/workspace"
 
 app = modal.App.lookup(APP_NAME, create_if_missing=True)
@@ -15,7 +15,7 @@ image = (
 def run_in_sandbox():
     print("🧪 Launching sandbox...")
 
-    sandbox = modal.Sandbox.create(app=app, image=image,timeout=86400,region="ap-northeast")
+    sandbox = modal.Sandbox.create(app=app, image=image,timeout=86400,region="me-west1")
 
     # ✅ 后台执行 app.py，不阻塞 GitHub Actions
     print("🚀 Running app.py in sandbox (background)...")
